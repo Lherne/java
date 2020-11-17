@@ -168,5 +168,6 @@ public class TableauMax {
         }
         return tabTriParInsertionMin;
         //test coms
+        //test num 2
     }
 }   
