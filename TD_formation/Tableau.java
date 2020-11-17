@@ -4,6 +4,7 @@ import java.io.*;
 ** Question 1 : Ecrire en java une classe Tableau ayant pour attribut un tableau d’entiers. 
 */
 public class Tableau {
+	//Ajouter comment pour tester
     int tailleTableau = 0;
     static int[] tableauEntier;
     public static void main(String [] args) {
