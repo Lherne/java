@@ -1,8 +1,8 @@
 Notes
 
 Git : 
-    ☐ Faire la modification et enregistrer
-    ☐ Stage all Changes a gauche le "+"
-    ☐ Commit le V au dessus 
-    ☐ Mettre commentaire et valider
-    ☐ F1 puis git:push
+    ✔ Faire la modification et enregistrer @done(20-11-17 18:51)
+    ✔ Stage all Changes a gauche le "+" @done(20-11-17 18:51)
+    ✔ Commit le V au dessus @done(20-11-17 18:51)
+    ✔ Mettre commentaire et valider @done(20-11-17 18:51)
+    ✔ F1 puis git:push @done(20-11-17 18:51)
