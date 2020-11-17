@@ -167,5 +167,6 @@ public class TableauMax {
             nCpt++;
         }
         return tabTriParInsertionMin;
+        //test coms
     }
 }   
