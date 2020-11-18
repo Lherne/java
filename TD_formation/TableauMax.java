@@ -11,7 +11,7 @@ public class TableauMax {
         TableauMax table1 = new TableauMax();
 
         //Utilisation du constructeur avec param
-        TableauMax table2 = new TableauMax(10);
+        TableauMax table2 = new TableauMax(5);
 
         //Appel de la métode d'affichage
         table2.afficherTableau(tableauEntier);
@@ -94,22 +94,24 @@ public class TableauMax {
             //Recherche de la plus petite valeur et de son index
             checkVal = tabDecrease[nCpt];
             valBase = tabDecrease[nCpt];
-            for(int i = nCpt; i < tabDecrease.length; i++){
-                if(checkVal > tabDecrease[i]){
-                    checkVal = tabDecrease[i];
-                    indexMin = i;
+            int i = nCpt;
+            while( i < tabDecrease.length){
+                if(valBase > tabDecrease[i+1]){
+                    checkVal = tabDecrease[i+1];
+                    indexMin = i+1;
+                    tabDecrease[nCpt] = checkVal;
+                    tabDecrease[indexMin] = valBase;
                 }
+                i++;
             }
             //Permutation
-                
-            tabDecrease[nCpt] = checkVal;
-            tabDecrease[indexMin] = valBase;
+
             nCpt++;
         }
         return tabDecrease;
     }
     /*
-    ** Question 4 : Par analogie au précédent tri, on peut imaginer un algorithme de tri par maximum. Proposer-enl’algorithme puis implémenter cette méthode.
+    ** Question 4 : Par analogie au précédent tri, on peut imaginer un algorithme de tri par maximum. Proposer-en l’algorithme puis implémenter cette méthode.
     */  
     public int[] triMaximum(int[] tabIncrease){
         int nCpt = 0;
@@ -167,7 +169,5 @@ public class TableauMax {
             nCpt++;
         }
         return tabTriParInsertionMin;
-        //test coms
-        //test num 2
     }
 }   
