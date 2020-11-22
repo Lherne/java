@@ -11,30 +11,33 @@ public class TableauMax {
         TableauMax table1 = new TableauMax();
 
         //Utilisation du constructeur avec param
-        TableauMax table2 = new TableauMax(10);
+        TableauMax table2 = new TableauMax(5);
 
         //Appel de la métode d'affichage
-        table2.afficherTableau(tableauEntier);
+        //table2.afficherTableau(tableauEntier);
 
         //Appel de la méthode de tri mini (du plus petit au plus grand)
-        int[] tabTrieMini = table2.triMinimum(tableauEntier);
-        System.out.println("### Tri mini ###");
-        table2.afficherTableau(tabTrieMini);
+        //int[] tabTrieMini = table2.triMinimum(tableauEntier);
+        //System.out.println("### Tri mini ###");
+        //table2.afficherTableau(tabTrieMini);
 
         //Appel de la méthode de tri maxi (plus grand au plus petit)
         int[] tabTrieMax = table2.triMaximum(tableauEntier);
-        System.out.println("### Tri maxi ###");
-        table2.afficherTableau(tabTrieMax);
+        //System.out.println("### Tri maxi ###");
+        //table2.afficherTableau(tabTrieMax);
 
         //Appel de la méthode de tri par insertion (du plus grand au plus petit)
-        int[] tableTriParInsertionMax = table2.triInsertionMax(tableauEntier);
-        System.out.println("### Tri insertion Max ###");
-        table2.afficherTableau(tableTriParInsertionMax);
+        //int[] tableTriParInsertionMax = table2.triInsertionMax(tableauEntier);
+        //System.out.println("### Tri insertion Max ###");
+        //table2.afficherTableau(tableTriParInsertionMax);
 
         //Appel de la méthode de tri par insertion (du plus petit au plus grand)
-        int[] tableTriParInsertionMin = table2.triInsertionMin(tableauEntier);
-        System.out.println("### Tri insertion Min ###");
-        table2.afficherTableau(tableTriParInsertionMin);
+        //int[] tableTriParInsertionMin = table2.triInsertionMin(tableauEntier);
+        //System.out.println("### Tri insertion Min ###");
+        //table2.afficherTableau(tableTriParInsertionMin);
+
+        //OneShoot !!!
+        table2.randomShot(tableauEntier);
         
     }
 
@@ -108,6 +111,11 @@ public class TableauMax {
         }
         return tabDecrease;
     }
+
+    public void permut(int index1,int index2){
+        int valeurTampon = 0;
+        
+    }
     /*
     ** Question 4 : Par analogie au précédent tri, on peut imaginer un algorithme de tri par maximum. Proposer-enl’algorithme puis implémenter cette méthode.
     */  
@@ -167,5 +175,61 @@ public class TableauMax {
             nCpt++;
         }
         return tabTriParInsertionMin;
+    }
+
+    //Tri par random shot !!!
+    public void randomShot(int[] unTableau){
+        int taille = unTableau.length;
+        int oneShot = 0;
+        int nCpt = 0;
+        int[] tableRandomShot = new int[taille];
+        boolean bCheckRandomShot = true;
+        while(nCpt < taille){
+            boolean bRandomShot = true;
+            System.out.println("Valeur de nCpt : "+nCpt);
+            while(bRandomShot){                
+                oneShot = random(0, taille);
+                System.out.println("Valeur de oneShot :"+oneShot);
+                //si la valeur générée n'est pas présente dans le tableau tableRandomShot on la garde
+                    int nCptCheck = 0;
+                    boolean bPresent = false;
+
+                    for(int i = 0 ; i<tableRandomShot.length;i++){
+                        if(oneShot==tableRandomShot[i]){
+                            System.out.println("Valeur présente.");
+                            bRandomShot = false;
+                            break;
+                        }else{
+                            System.out.println("Valeur non présente.");
+                            bCheckRandomShot = false;
+                        }
+                    }
+                if(!bCheckRandomShot || nCpt == 0){
+                    tableRandomShot[nCpt]=oneShot;
+                    System.out.println("Valeur ajouté à l'index "+nCpt+" : "+oneShot);
+                    bCheckRandomShot = true;
+                    nCpt++;
+                }
+            }
+            
+        }
+    }
+    
+    //Methode qui sort des entiers au hazard entre 2 bornes
+    public int random(int vMin, int vMax){
+        boolean onContinueAgenererDesChiffres;
+        onContinueAgenererDesChiffres = true;
+        int rdm = 0;
+        while(onContinueAgenererDesChiffres){
+            // On génère un entier au pif entre 0 et 99 (nos tableaux ont là même contrainte donc c'est cool).
+            rdm = (int)(Math.random()*100);
+            // Il faut dégager les chiffre générés qui auront une valeur > a notre taille max et < a notre taille mini
+            if(rdm >= vMin && rdm < vMax){
+                onContinueAgenererDesChiffres = false;
+            }else{
+                onContinueAgenererDesChiffres = true;
+            }
+        }
+        return rdm;
     }
 }   
