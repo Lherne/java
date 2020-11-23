@@ -90,12 +90,18 @@ public class TableauMax {
         int checkVal = 0;
         int valBase = 0;
         int indexMin = 0;
-        while(nCpt < tabDecrease.length){
+        System.out.println("tailleTableau : "+tabDecrease.length);
+        /*
+        Faire une boucle dans le while qui prend en compte si il y a une permutation ou non
+        si il y a une permutation algo qui check les infos precedentes pour savoir si la valeur est bien superieur aux valeures precedentes
+        et si c'est le cas refaire une permutation ....
+        */
+        while(nCpt < tabDecrease.length-1){
             //Recherche de la plus petite valeur et de son index
             checkVal = tabDecrease[nCpt];
             valBase = tabDecrease[nCpt];
             int i = nCpt;
-            while( i < tabDecrease.length){
+            while( i < tabDecrease.length-1){
                 if(valBase > tabDecrease[i+1]){
                     checkVal = tabDecrease[i+1];
                     indexMin = i+1;
