@@ -7,6 +7,10 @@ Git :
     ✔ Mettre commentaire et valider @done(20-11-17 18:51)
     ✔ F1 puis git:push @done(20-11-17 18:51)
 
+
+Git Bash :
+    ✔ git checkout (nom de la branche) => permet de changer de branche  @done(20-11-23 15:28)
+
 TODO :
     'Cmd/Ctrl+Enter' // Triggers `Todo: Toggle Box`
     'Alt+Enter' // Triggers `Todo: Toggle Box`
@@ -14,3 +18,4 @@ TODO :
     'Alt+C' // Triggers `Todo: Toggle Cancelled`
     'Alt+S' // Triggers `Todo: Toggle Start`
     'Cmd/Ctrl+Shift+A' // Triggers  `Todo: Archive`
+
