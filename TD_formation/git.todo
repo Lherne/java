@@ -10,6 +10,8 @@ Git :
 
 Git Bash :
     ✔ git checkout (nom de la branche) => permet de changer de branche  @done(20-11-23 15:28)
+    ✔ ls (permet de lister tout les fichier compris dans le dossier) @done(20-11-23 15:32)
+    ✔ cd .. (permet de revenir une ligne en arriere sur l'adresse du fichier) @done(20-11-23 15:31)
 
 TODO :
     'Cmd/Ctrl+Enter' // Triggers `Todo: Toggle Box`
